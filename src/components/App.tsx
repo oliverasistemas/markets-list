@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 
-import {IMarketsItem} from "types";
+import {eColors, errorMessage, IMarketsItem} from "types";
 import {getMarkets} from "utils/api";
 import useOnScreen from "hooks/useOnScreen";
 
@@ -9,17 +9,16 @@ import Market from "./Market";
 
 const Container = styled.div`
   padding: 10px;
-  background: #1e1f1e;
+  background: ${eColors.black};
   display: flex;
   justify-content: center;
 
   h1 {
     text-align: center;
-    color: #eeeeee;
+    color: ${eColors.white};
   }
 `;
 
-const errorMessage = "There was an error fetching markets data, probably you exceeded Coin Gecko's API rate limiting, please try again in a minute";
 
 function App() {
     const [markets, setMarkets] = useState<IMarketsItem[]>([]);
@@ -31,10 +30,12 @@ function App() {
     useEffect(() => {
         if (isVisible || page === 1) {
             getMarkets(page)
-                .then(x => setMarkets([...markets, ...x.data]))
+                .then(x => {
+                    setMarkets(prevState => [...prevState, ...x.data]);
+                    setPage(page + 1);
+                })
                 .catch(() => alert(errorMessage))
             ;
-            setPage(page + 1);
         }
     }, [isVisible]);
 
@@ -49,7 +50,7 @@ function App() {
     return (
         <Container>
             <section>
-                <h1>Markets List</h1>
+                <h1>Coingecko Markets List</h1>
                 {markets.map(market => <Market
                     onMarketSelected={onMarketClick}
                     selectedMarket={selectedMarket}

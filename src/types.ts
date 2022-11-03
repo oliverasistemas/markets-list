@@ -42,9 +42,12 @@ export interface IMarketsItem  {
 }
 
 export enum eColors {
-    success ="#83B77E",
+    black = "#1f1f1f",
     danger ="#F75D1B",
-    grey ="#7c7c7c",
     darkGrey ="#363636",
-    white ="#d2d1d1"
+    grey ="#7c7c7c",
+    success ="#83B77E",
+    white ="#d2d1d1",
 }
+
+export const errorMessage = "There was an error fetching markets data, probably you exceeded Coin Gecko's API rate limiting, please try again in a minute";

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 
-import {CoinsFetchMarketChart, IMarketsItem} from "types";
+import {CoinsFetchMarketChart, errorMessage, IMarketsItem} from "types";
 import {getMarketChart} from "utils/api";
 
 import Sparkline from "./Sparkline";
@@ -9,8 +9,6 @@ import Sparkline from "./Sparkline";
 const Container = styled.div`
 background: #4c4c60;
 `;
-
-const errorMessage = "There was an error fetching markets data, probably you exceeded Coin Gecko's API rate limiting, please try again in a minute";
 
 function ActiveMarket(props: { item: IMarketsItem }) {
     const [data, setData] = useState<number[][]>([]);
