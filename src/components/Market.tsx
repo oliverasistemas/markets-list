@@ -65,15 +65,17 @@ function Market(props: { item: IMarketsItem, selectedMarket: string, onMarketSel
                 </div>
                 <div className={"pl-3 token"}>
                     <Strong label={`${symbol}+USD`} />
-                    <small>{name}</small>
+                    <Small
+                        label={name}
+                        color={eColors.grey}
+                    />
                 </div>
                 <div className={"sparkline"}>
                     <SparklineSmall data={item.sparkline_in_7d.price}/>
                 </div>
 
                 <div className={"pl-3 stats"}>
-                    <div>{numberFormatter.format(item.total_volume / current_price)} <small>{item.symbol.toUpperCase()}</small>
-                    </div>
+                    <div>{numberFormatter.format(item.total_volume / current_price)} <small>{item.symbol.toUpperCase()}</small></div>
                     <Small
                         label="24h volume"
                         color={eColors.grey}
