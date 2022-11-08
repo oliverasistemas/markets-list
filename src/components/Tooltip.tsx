@@ -6,7 +6,7 @@ import {currencyFormatter} from "utils/format";
 import Small from "./Small";
 
 const Container = styled.div`
-  border-left: 2px solid ${eColors.darkGrey};
+  border-left: 2px solid ${eColors.black};
   height: 200px;
   position: absolute;
 `;
