@@ -1,7 +1,7 @@
 import React, {MouseEvent, useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 
-import {MarketItem} from "types";
+import {eColors, MarketItem} from "types";
 
 import Tooltip from "./Tooltip";
 
@@ -39,7 +39,7 @@ function Sparkline(props: { data: MarketItem[]; }) {
             const ratioX = canvas.width / (data.length - 1);
             const ratioY = canvas.height / (dataMax - dataMin);
 
-            ctx.strokeStyle = numbers[0] > numbers[numbers.length - 1] ? "#F75D1B" : "#83B77E";
+            ctx.strokeStyle = numbers[0] > numbers[numbers.length - 1] ? eColors.danger : eColors.success;
             ctx.lineWidth = 2;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 

@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 
-import {CoinsFetchMarketChart, errorMessage, IMarketsItem} from "types";
+import {CoinsFetchMarketChart, eColors, errorMessage, IMarketsItem} from "types";
 import {getMarketChart} from "utils/api";
 
 import Sparkline from "./Sparkline";
 
 const Container = styled.div`
-background: #4c4c60;
+background: ${eColors.darkGrey};
 `;
 
 function ActiveMarket(props: { item: IMarketsItem }) {

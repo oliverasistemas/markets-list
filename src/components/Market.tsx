@@ -14,15 +14,15 @@ const Container = styled.div`
 
   section.markets {
     align-items: center;
-    background: #2d2d38;
-    color: #d0cece;
+    background: ${eColors.darkGrey};
+    color: ${eColors.white};
     cursor: pointer;
     display: flex;
     padding: 5px;
     margin-bottom: 2px;
 
     &.active {
-      background: #4c4c60;
+      background: ${eColors.darkGrey};
     }
     
   }

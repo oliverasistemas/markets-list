@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from "react";
+import {eColors} from "../types";
 
 function SparklineSmall(props: { data: number[]; }) {
     const {data} = props;
@@ -20,7 +21,7 @@ function SparklineSmall(props: { data: number[]; }) {
             const ratioX = canvas.width / (data.length - 1);
             const ratioY = canvas.height / (dataMax - dataMin);
 
-            ctx.strokeStyle = data[0] > data[data.length - 1] ? "#F75D1B" : "#83B77E";
+            ctx.strokeStyle = data[0] > data[data.length - 1] ? eColors.danger : eColors.success;
             ctx.lineWidth = 2;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
