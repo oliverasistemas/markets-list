@@ -12,6 +12,8 @@ background: ${eColors.darkGrey};
 
 function ActiveMarket(props: { item: IMarketsItem }) {
     const [data, setData] = useState<number[][]>([]);
+    const {item} = props;
+
 
     useEffect(() => {
         getMarketChart(item.id).then(
@@ -20,9 +22,8 @@ function ActiveMarket(props: { item: IMarketsItem }) {
                 setData(data.prices);
             }).catch(() => alert(errorMessage));
 
-    }, []);
+    }, [item.id]);
 
-    const {item} = props;
 
     const formattedData = data.map(x => {
         return {

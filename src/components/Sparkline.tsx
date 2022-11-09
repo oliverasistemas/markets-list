@@ -24,10 +24,7 @@ function Sparkline(props: { data: MarketItem[]; }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        draw();
-    }, [data]);
 
-    const draw = () => {
         const canvas = canvasRef.current;
         const ctx = canvas?.getContext("2d");
 
@@ -59,7 +56,8 @@ function Sparkline(props: { data: MarketItem[]; }) {
             ctx.stroke();
         }
 
-    };
+
+    }, [data]);
 
     function onMouseOver(e: MouseEvent) {
         const message = e.nativeEvent;

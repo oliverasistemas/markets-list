@@ -5,14 +5,10 @@ function SparklineSmall(props: { data: number[]; }) {
     const {data} = props;
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    useEffect(() => {
-        draw();
-    }, [data]);
 
-    const draw = () => {
+    useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas?.getContext("2d");
-
 
         if (canvas && ctx) {
             const dataMin = Math.min(...data);
@@ -41,7 +37,8 @@ function SparklineSmall(props: { data: number[]; }) {
             ctx.stroke();
         }
 
-    };
+
+    }, [data]);
 
     return (
         <div>

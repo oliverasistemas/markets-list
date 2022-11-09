@@ -37,7 +37,7 @@ function App() {
                 .catch(() => alert(errorMessage))
             ;
         }
-    }, [isVisible]);
+    }, [isVisible, page]);
 
     const onMarketClick = (marketId: string) => {
         if (selectedMarket === marketId) {
