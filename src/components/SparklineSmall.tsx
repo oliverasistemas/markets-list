@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import {eColors} from "../types";
+import {eColors} from "types";
 
 function SparklineSmall(props: { data: number[]; }) {
     const {data} = props;

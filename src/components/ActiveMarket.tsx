@@ -14,7 +14,6 @@ function ActiveMarket(props: { item: IMarketsItem }) {
     const [data, setData] = useState<number[][]>([]);
     const {item} = props;
 
-
     useEffect(() => {
         getMarketChart(item.id).then(
             res => {
