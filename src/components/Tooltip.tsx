@@ -30,9 +30,7 @@ function Tooltip(props: { datum: MarketItem; xPos: number; }) {
                 <div>{currencyFormatter.format(datum.value)}</div>
                 <Small label={datum.date} color={eColors.grey} />
             </Infobox>
-
         </Container>
-
     );
 }
 

@@ -51,3 +51,7 @@ export enum eColors {
 }
 
 export const errorMessage = "There was an error fetching markets data, probably you exceeded Coin Gecko's API rate limiting, please try again in a minute";
+
+export interface IMarketsMap {
+    [key: number]: IMarketsItem[]
+}

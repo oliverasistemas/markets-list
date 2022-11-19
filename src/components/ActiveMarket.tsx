@@ -23,7 +23,6 @@ function ActiveMarket(props: { item: IMarketsItem }) {
 
     }, [item.id]);
 
-
     const formattedData = data.map(x => {
         return {
             date: (new Date(x[0]).toLocaleDateString()),
@@ -32,7 +31,7 @@ function ActiveMarket(props: { item: IMarketsItem }) {
     });
 
     return <Container>
-        {data.length > 0 && <Sparkline data={formattedData}/>}
+        {data.length > 0 && <Sparkline width={800} data={formattedData}/>}
     </Container>;
 }
 
